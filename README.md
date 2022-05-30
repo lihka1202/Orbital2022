@@ -20,5 +20,5 @@ The steps are listed below:
 7. Head to the Virtual Device and test you the feature, do check if the parking occupancy rates are accurate!
 
 ## Questions?
-If you have any questions, please do not hesitate to get into contact with me on telegram at @numinoussssss
-The whole installation process is quite long winded, so please contact me if you were to get stuck in between.
+If you have any questions, please do not hesitate to get into contact us on telegram at @numinoussssss or @ju_can.
+The whole installation process is quite long winded, so please contact us if you were to get stuck in between.
