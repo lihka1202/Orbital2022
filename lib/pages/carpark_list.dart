@@ -30,13 +30,11 @@ String result16 = '';
 String result17 = '';
 
 class CarparkList extends StatefulWidget {
-
   @override
   _CarparkListState createState() => _CarparkListState();
 }
 
 class _CarparkListState extends State<CarparkList> {
-
 // Strings to store the extracted Article titles
   //List<String>Result = [];
 
@@ -46,21 +44,17 @@ class _CarparkListState extends State<CarparkList> {
   bool isLoading = false;
 
   Future<List<String>> extractData() async {
-
     // Getting the response from the targeted url
-    final response =
-    await http.Client().get(Uri.parse('https://justpark.capitaland.com/LotsAvail'));
+    final response = await http.Client()
+        .get(Uri.parse('https://justpark.capitaland.com/LotsAvail'));
 
     // Status Code 200 means response has been received successfully
     if (response.statusCode == 200) {
-
       // Getting the html document from the response
       var document = parser.parse(response.body);
       try {
-
         // Scraping the first article title
-        var responseString0 = document
-            .getElementsByClassName('lotscount')[0];
+        var responseString0 = document.getElementsByClassName('lotscount')[0];
         //.children[0]
         //.children[0]
         //.children[0];
@@ -68,8 +62,7 @@ class _CarparkListState extends State<CarparkList> {
         //print(responseString1.text.trim());
 
         // Scraping the second article title
-        var responseString1 = document
-            .getElementsByClassName('lotscount')[1];
+        var responseString1 = document.getElementsByClassName('lotscount')[1];
         //.children[1]
         //.children[0]
         //.children[0];
@@ -77,62 +70,46 @@ class _CarparkListState extends State<CarparkList> {
         //print(responseString2.text.trim());
 
         // Scraping the third article title
-        var responseString2 = document
-            .getElementsByClassName('lotscount')[2];
+        var responseString2 = document.getElementsByClassName('lotscount')[2];
         //.children[2]
         //.children[0]
         //.children[0];
 
         //print(responseString3.text.trim());
 
-        var responseString3 = document
-            .getElementsByClassName('lotscount')[3];
+        var responseString3 = document.getElementsByClassName('lotscount')[3];
 
-        var responseString4 = document
-            .getElementsByClassName('lotscount')[4];
+        var responseString4 = document.getElementsByClassName('lotscount')[4];
 
-        var responseString5 = document
-            .getElementsByClassName('lotscount')[5];
+        var responseString5 = document.getElementsByClassName('lotscount')[5];
 
-        var responseString6 = document
-            .getElementsByClassName('lotscount')[6];
+        var responseString6 = document.getElementsByClassName('lotscount')[6];
 
-        var responseString7 = document
-            .getElementsByClassName('lotscount')[7];
+        var responseString7 = document.getElementsByClassName('lotscount')[7];
 
-        var responseString8 = document
-            .getElementsByClassName('lotscount')[8];
+        var responseString8 = document.getElementsByClassName('lotscount')[8];
 
-        var responseString9 = document
-            .getElementsByClassName('lotscount')[9];
+        var responseString9 = document.getElementsByClassName('lotscount')[9];
 
-        var responseString10 = document
-            .getElementsByClassName('lotscount')[10];
+        var responseString10 = document.getElementsByClassName('lotscount')[10];
 
-        var responseString11 = document
-            .getElementsByClassName('lotscount')[11];
+        var responseString11 = document.getElementsByClassName('lotscount')[11];
 
-        var responseString12 = document
-            .getElementsByClassName('lotscount')[12];
+        var responseString12 = document.getElementsByClassName('lotscount')[12];
 
-        var responseString13 = document
-            .getElementsByClassName('lotscount')[13];
+        var responseString13 = document.getElementsByClassName('lotscount')[13];
 
-        var responseString14 = document
-            .getElementsByClassName('lotscount')[14];
+        var responseString14 = document.getElementsByClassName('lotscount')[14];
 
-        var responseString15 = document
-            .getElementsByClassName('lotscount')[15];
+        var responseString15 = document.getElementsByClassName('lotscount')[15];
 
-        var responseString16 = document
-            .getElementsByClassName('lotscount')[16];
+        var responseString16 = document.getElementsByClassName('lotscount')[16];
 
-        var responseString17 = document
-            .getElementsByClassName('lotscount')[17];
+        var responseString17 = document.getElementsByClassName('lotscount')[17];
 
         // Converting the extracted titles into
         // string and returning a list of Strings
-        return[
+        return [
           responseString0.text.trim(),
           responseString1.text.trim(),
           responseString2.text.trim(),
@@ -159,6 +136,7 @@ class _CarparkListState extends State<CarparkList> {
       return ['', '', 'ERROR: ${response.statusCode}.'];
     }
   }
+
   void updateData() async {
     final response = await extractData();
     setState(() {
@@ -185,54 +163,115 @@ class _CarparkListState extends State<CarparkList> {
 
   @override
   Widget build(BuildContext context) {
-    Timer mytimer = Timer.periodic(Duration(minutes: 0, seconds: 10), (timer) {updateData(); });
+    Timer mytimer = Timer.periodic(Duration(minutes: 0, seconds: 10), (timer) {
+      updateData();
+    });
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-        appBar: AppBar(title: Text('Parking Availability', style: TextStyle(color: Colors.greenAccent, fontSize: 30.0) ),backgroundColor: Colors.black, centerTitle: true,),
+        backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          title: Text('Parking Availability',
+              style: TextStyle(color: Colors.greenAccent, fontSize: 30.0)),
+          backgroundColor: Colors.black,
+          centerTitle: true,
+        ),
         body: ListView(
           padding: EdgeInsets.all(20.0),
           children: [
-            cardTemplate(location: 'Bugis+', lotscount: result0,),
+            cardTemplate(
+              location: 'Bugis+',
+              lotscount: result0,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Clarke Quay', lotscount: result1,),
-            SizedBox(height: 10,),
-            cardTemplate(location: 'Funan', lotscount: result2,),
-            SizedBox(height: 10,),
-            cardTemplate(location: 'Plaza Singapura', lotscount: result3,),
+            cardTemplate(
+              location: 'Clarke Quay',
+              lotscount: result1,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            cardTemplate(
+              location: 'Funan',
+              lotscount: result2,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            cardTemplate(
+              location: 'Plaza Singapura',
+              lotscount: result3,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Raffles City Shopping Center', lotscount: result4,),
+            cardTemplate(
+              location: 'Raffles City Shopping Center',
+              lotscount: result4,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'The Atrium@Orchard', lotscount: result5,),
+            cardTemplate(
+              location: 'The Atrium@Orchard',
+              lotscount: result5,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Bedok Mall', lotscount: result6,),
+            cardTemplate(
+              location: 'Bedok Mall',
+              lotscount: result6,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Tampines Mall', lotscount: result7,),
+            cardTemplate(
+              location: 'Tampines Mall',
+              lotscount: result7,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Bukit Panjang Plaza', lotscount: result8,),
+            cardTemplate(
+              location: 'Bukit Panjang Plaza',
+              lotscount: result8,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Junction 8', lotscount: result9,),
+            cardTemplate(
+              location: 'Junction 8',
+              lotscount: result9,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Lot One Shoppers Mall', lotscount: result10,),
+            cardTemplate(
+              location: 'Lot One Shoppers Mall',
+              lotscount: result10,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'IMM Building', lotscount: result11,),
+            cardTemplate(
+              location: 'IMM Building',
+              lotscount: result11,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'JCube', lotscount: result12,),
+            cardTemplate(
+              location: 'JCube',
+              lotscount: result12,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Westgate', lotscount: result13,),
+            cardTemplate(
+              location: 'Westgate',
+              lotscount: result13,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'CapitaGreen', lotscount: result14,),
+            cardTemplate(
+              location: 'CapitaGreen',
+              lotscount: result14,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Capital Tower', lotscount: result15,),
+            cardTemplate(
+              location: 'Capital Tower',
+              lotscount: result15,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'Six Battery Road', lotscount: result16,),
+            cardTemplate(
+              location: 'Six Battery Road',
+              lotscount: result16,
+            ),
             SizedBox(height: 10),
-            cardTemplate(location: 'CapitalSpring', lotscount: result17,),
+            cardTemplate(
+              location: 'CapitalSpring',
+              lotscount: result17,
+            ),
             SizedBox(height: 10),
           ],
-        )
-    );
+        ));
   }
 }
-
-
-

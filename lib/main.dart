@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:httptesting/pages/Bedok%20Mall.dart';
 import 'package:httptesting/pages/Bugis+.dart';
 import 'package:httptesting/pages/Bukit%20Panjang%20Plaza.dart';
@@ -26,7 +27,7 @@ To do list:
     Settled - Needa find a way to pass the number of lots from one page to another
  */
 void main() => runApp(MaterialApp(
-    routes: {
+      routes: {
         '/': (context) => Home(),
         '/carpark_listing': (context) => CarparkList(),
         '/Bugis+': (context) => BugisPlus(),
@@ -47,7 +48,5 @@ void main() => runApp(MaterialApp(
         '/Six Battery Road': (context) => SixBatteryRoad(),
         '/CapitalSpring': (context) => CapitalSpring(),
         '/IMM Building': (context) => IMMBuilding(),
-    },
-));
-
-
+      },
+    ));
