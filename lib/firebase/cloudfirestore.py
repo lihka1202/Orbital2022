@@ -4,7 +4,6 @@ from httplib2 import Credentials
 from numpy import append
 import requests
 
-#URL = "https://www.bursamalaysia.com/market_information/market_statistic/securities"
 URL = "https://justpark.capitaland.com/LotsAvail"
 
 response = requests.get(URL)
@@ -19,10 +18,6 @@ for indiv in body:
     number = indiv.find('span').text
     locations.append(name)
     lotscount.append(number)
-    # data = {}
-    # data['location'] = names
-    # data['loscount'] = lotsavail
-    # lots_info[names] = lotsavail
 
 lots_info = dict(zip(locations, lotscount))
 
@@ -34,17 +29,21 @@ from datetime import datetime
 import pytz
 
 tz = pytz.timezone('Asia/Singapore')
-time = datetime.now(tz).strftime('%Y-%m-%d %H:%M:%S')
+timedb = {'Time': datetime.now(tz)}
 
 cred = credentials.Certificate("orbital2022-a6638-firebase-adminsdk-6xut9-b51dac9b51.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-def save(collection_id, document_id, data):
-    db.collection(collection_id).document(document_id).set(data)
+def save(collection_id, data, snapshot):
+    db.collection(collection_id).document('Malls').set(data)
+    db.collection(collection_id).document('Snapshot').set(snapshot)
 
 save(
     collection_id="Carpark Availability",
-    document_id=time,
-    data = lots_info
+    #document_id=time,
+    data = lots_info,
+    snapshot = timedb
+    
 )
+
