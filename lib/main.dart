@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:httptesting/pages/Bedok%20Mall.dart';
-import 'package:httptesting/pages/Bugis+.dart';
-import 'package:httptesting/pages/Bukit%20Panjang%20Plaza.dart';
-import 'package:httptesting/pages/CapitaGreen.dart';
-import 'package:httptesting/pages/Capital%20Tower.dart';
-import 'package:httptesting/pages/CapitalSpring.dart';
-import 'package:httptesting/pages/Clarke%20Quay.dart';
-import 'package:httptesting/pages/Funan.dart';
-import 'package:httptesting/pages/IMM%20Building.dart';
-import 'package:httptesting/pages/JCube.dart';
-import 'package:httptesting/pages/Junction%208.dart';
-import 'package:httptesting/pages/Lot%20One%20Shoppers%20Mall.dart';
-import 'package:httptesting/pages/Plaza%20Singapura.dart';
-import 'package:httptesting/pages/Raffles%20City%20Shopping%20Center.dart';
-import 'package:httptesting/pages/Six%20Battery%20Road.dart';
-import 'package:httptesting/pages/Tampines%20Mall.dart';
-import 'package:httptesting/pages/The%20Atrium@Orchard.dart';
-import 'package:httptesting/pages/Westgate.dart';
+import 'package:httptesting/pages/Malls/Bedok%20Mall.dart';
+import 'package:httptesting/pages/Malls/Bugis+.dart';
+import 'package:httptesting/pages/Malls/Bukit%20Panjang%20Plaza.dart';
+import 'package:httptesting/pages/Malls/CapitaGreen.dart';
+import 'package:httptesting/pages/Malls/Capital%20Tower.dart';
+import 'package:httptesting/pages/Malls/CapitalSpring.dart';
+import 'package:httptesting/pages/Malls/Clarke%20Quay.dart';
+import 'package:httptesting/pages/Malls/Funan.dart';
+import 'package:httptesting/pages/Malls/IMM%20Building.dart';
+import 'package:httptesting/pages/Malls/JCube.dart';
+import 'package:httptesting/pages/Malls/Junction%208.dart';
+import 'package:httptesting/pages/Malls/Lot%20One%20Shoppers%20Mall.dart';
+import 'package:httptesting/pages/Malls/Plaza%20Singapura.dart';
+import 'package:httptesting/pages/Malls/Raffles%20City%20Shopping%20Center.dart';
+import 'package:httptesting/pages/Malls/Six%20Battery%20Road.dart';
+import 'package:httptesting/pages/Malls/Tampines%20Mall.dart';
+import 'package:httptesting/pages/Malls/The%20Atrium@Orchard.dart';
+import 'package:httptesting/pages/Malls/Westgate.dart';
 import 'package:httptesting/pages/carpark_list.dart';
 import 'package:httptesting/pages/Home.dart';
+import 'package:provider/provider.dart';
 
 /*
 To do list:
