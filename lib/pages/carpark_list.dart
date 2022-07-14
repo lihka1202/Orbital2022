@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:httptesting/pages/carpark_card.dart';
-import 'package:html/parser.dart' as parser;
-import 'package:http/http.dart' as http;
+//import 'package:html/parser.dart' as parser;
+//import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
@@ -16,14 +16,17 @@ class CarparkList extends StatefulWidget {
 class _CarparkListState extends State<CarparkList> {
   @override
   Widget build(BuildContext context) {
-    final carparks = Provider.of<QuerySnapshot>(context);
-    for (var doc in carparks.docs) {
-      print(doc.data);
+    final carparks = Provider.of<QuerySnapshot?>(context);
+    if (carparks != null) {
+      for (var doc in carparks.docs) {
+        print(doc.data);
+      }
     }
 
     return Container();
   }
 }
+
 
 
 

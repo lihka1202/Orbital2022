@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:httptesting/pages/Malls/Bedok%20Mall.dart';
@@ -27,27 +29,58 @@ To do list:
     Needa solve the passage of data from one page to another
     Settled - Needa find a way to pass the number of lots from one page to another
  */
-void main() => runApp(MaterialApp(
-      routes: {
-        '/': (context) => Home(),
-        '/carpark_listing': (context) => CarparkList(),
-        '/Bugis+': (context) => BugisPlus(),
-        '/Clarke Quay': (context) => ClarkeQuay(),
-        '/Funan': (context) => Funan(),
-        '/Plaza Singapura': (context) => PlazaSingapura(),
-        '/Raffles City Shopping Center': (context) => RSFC(),
-        '/The Atrium@Orchard': (context) => AtriumOrchard(),
-        '/Bedok Mall': (context) => BedokMall(),
-        '/Tampines Mall': (context) => TampinesMall(),
-        '/Bukit Panjang Plaza': (context) => BukitPanjang(),
-        '/Junction 8': (context) => Junction8(),
-        '/Lot One Shoppers Mall': (context) => LOSM(),
-        '/JCube': (context) => Jcube(),
-        '/Westgate': (context) => Westgate(),
-        '/CapitaGreen': (context) => CapitaGreen(),
-        '/Capital Tower': (context) => CapitalTower(),
-        '/Six Battery Road': (context) => SixBatteryRoad(),
-        '/CapitalSpring': (context) => CapitalSpring(),
-        '/IMM Building': (context) => IMMBuilding(),
-      },
-    ));
+
+void main() async {
+  //Initialise Database when starting the application
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MaterialApp(
+    routes: {
+      '/': (context) => Home(),
+      '/carpark_listing': (context) => CarparkList(),
+      '/Bugis+': (context) => BugisPlus(),
+      '/Clarke Quay': (context) => ClarkeQuay(),
+      '/Funan': (context) => Funan(),
+      '/Plaza Singapura': (context) => PlazaSingapura(),
+      '/Raffles City Shopping Center': (context) => RSFC(),
+      '/The Atrium@Orchard': (context) => AtriumOrchard(),
+      '/Bedok Mall': (context) => BedokMall(),
+      '/Tampines Mall': (context) => TampinesMall(),
+      '/Bukit Panjang Plaza': (context) => BukitPanjang(),
+      '/Junction 8': (context) => Junction8(),
+      '/Lot One Shoppers Mall': (context) => LOSM(),
+      '/JCube': (context) => Jcube(),
+      '/Westgate': (context) => Westgate(),
+      '/CapitaGreen': (context) => CapitaGreen(),
+      '/Capital Tower': (context) => CapitalTower(),
+      '/Six Battery Road': (context) => SixBatteryRoad(),
+      '/CapitalSpring': (context) => CapitalSpring(),
+      '/IMM Building': (context) => IMMBuilding(),
+    },
+  ));
+}
+
+// void main() => runApp(MaterialApp(
+//       routes: {
+//         '/': (context) => Home(),
+//         '/carpark_listing': (context) => CarparkList(),
+//         '/Bugis+': (context) => BugisPlus(),
+//         '/Clarke Quay': (context) => ClarkeQuay(),
+//         '/Funan': (context) => Funan(),
+//         '/Plaza Singapura': (context) => PlazaSingapura(),
+//         '/Raffles City Shopping Center': (context) => RSFC(),
+//         '/The Atrium@Orchard': (context) => AtriumOrchard(),
+//         '/Bedok Mall': (context) => BedokMall(),
+//         '/Tampines Mall': (context) => TampinesMall(),
+//         '/Bukit Panjang Plaza': (context) => BukitPanjang(),
+//         '/Junction 8': (context) => Junction8(),
+//         '/Lot One Shoppers Mall': (context) => LOSM(),
+//         '/JCube': (context) => Jcube(),
+//         '/Westgate': (context) => Westgate(),
+//         '/CapitaGreen': (context) => CapitaGreen(),
+//         '/Capital Tower': (context) => CapitalTower(),
+//         '/Six Battery Road': (context) => SixBatteryRoad(),
+//         '/CapitalSpring': (context) => CapitalSpring(),
+//         '/IMM Building': (context) => IMMBuilding(),
+//       },
+//     ));
