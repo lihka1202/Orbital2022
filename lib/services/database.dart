@@ -2,20 +2,46 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:html/dom.dart';
 import 'package:httptesting/pages/carparks.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:httptesting/services/database.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class DatabaseService {
   final String? Carpark;
   DatabaseService({this.Carpark});
 
-  final CollectionReference carparkCollection =
-      FirebaseFirestore.instance.collection('Carpark Availability');
+  // official documentation
+  final ref =
+      FirebaseDatabase.instance.reference().child('Carpark Availability');
+  final snapshot = ref.child('Malls').get();
 
-  Stream<QuerySnapshot> get carpark {
-    return carparkCollection.snapshots();
+  //net ninja
+  // final CollectionReference carparkCollection =
+  //     FirebaseFirestore.instance.collection('Carpark Availability');
+
+  // carpark list from snapshot
+  List<Carparks> _carparkListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs.map((doc) {
+      return Carparks(
+          locations: doc.data().toString().contains('locations')
+              ? doc.get('locations')
+              : '',
+          //locations: doc.get('locations') ?? '',
+          lotscount: doc.data().toString().contains('lotscount')
+              ? doc.get('lotscount')
+              : '');
+      //lotscount: doc.get('lotscount') ?? 0,
+      //time: doc.get('time') ?? '');
+    }).toList();
+  }
+
+  // get carpark stream
+  Stream<List<Carparks>> get carpark {
+    return carparkCollection.snapshots().map(_carparkListFromSnapshot);
   }
 }
 
