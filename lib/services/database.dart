@@ -14,27 +14,24 @@ class DatabaseService {
   final String? Carpark;
   DatabaseService({this.Carpark});
 
-  // official documentation
-  final ref =
-      FirebaseDatabase.instance.reference().child('Carpark Availability');
-  final snapshot = ref.child('Malls').get();
-
   //net ninja
-  // final CollectionReference carparkCollection =
-  //     FirebaseFirestore.instance.collection('Carpark Availability');
+  final CollectionReference carparkCollection =
+      FirebaseFirestore.instance.collection('Carpark Availability');
+
+  // official documentation
+  //final docRef = db.collection("Carpark Availability").doc("Malls");
+  //final snapshot = ref.child('Malls').get();
 
   // carpark list from snapshot
   List<Carparks> _carparkListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       return Carparks(
-          locations: doc.data().toString().contains('locations')
-              ? doc.get('locations')
-              : '',
-          //locations: doc.get('locations') ?? '',
-          lotscount: doc.data().toString().contains('lotscount')
-              ? doc.get('lotscount')
-              : '');
-      //lotscount: doc.get('lotscount') ?? 0,
+          //locations:
+          //doc.data().toString().contains('Malls') ? doc.get('name') : '',
+          name: doc.get('Bugis +') ?? '',
+          //lotscount:
+          //doc.data().toString().contains('Malls') ? doc.get('lots') : '');
+          lots: doc.get('lots') ?? 0);
       //time: doc.get('time') ?? '');
     }).toList();
   }

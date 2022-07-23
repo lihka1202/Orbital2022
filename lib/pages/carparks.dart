@@ -1,7 +1,9 @@
-class Carparks {
-  final String? locations;
-  final String? lotscount;
-  final String? time;
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-  const Carparks({this.locations, this.lotscount, this.time});
+class Carparks {
+  final String? name;
+  final String? lots;
+  final Timestamp? time;
+
+  const Carparks({this.name, this.lots, this.time});
 }

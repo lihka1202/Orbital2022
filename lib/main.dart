@@ -22,6 +22,7 @@ import 'package:httptesting/pages/Malls/The%20Atrium@Orchard.dart';
 import 'package:httptesting/pages/Malls/Westgate.dart';
 import 'package:httptesting/pages/carpark_list.dart';
 import 'package:httptesting/pages/Home.dart';
+import 'package:httptesting/pages/views/carpark_views.dart';
 import 'package:provider/provider.dart';
 
 /*

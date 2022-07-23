@@ -19,8 +19,8 @@ class _CarparkListState extends State<CarparkList> {
     final carparks = Provider.of<List<Carparks>?>(context);
     if (carparks != null) {
       carparks.forEach((carparks) {
-        print(carparks.locations);
-        print(carparks.lotscount);
+        print(carparks.name);
+        print(carparks.lots);
         print(carparks.time);
       });
     }
