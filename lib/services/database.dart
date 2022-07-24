@@ -18,20 +18,15 @@ class DatabaseService {
   final CollectionReference carparkCollection =
       FirebaseFirestore.instance.collection('Carpark Availability');
 
-  // official documentation
-  //final docRef = db.collection("Carpark Availability").doc("Malls");
-  //final snapshot = ref.child('Malls').get();
+  //const databaseReference = DatabaseReference.instance().getr
 
-  // carpark list from snapshot
   List<Carparks> _carparkListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {
       return Carparks(
-          //locations:
-          //doc.data().toString().contains('Malls') ? doc.get('name') : '',
-          name: doc.get('Bugis +') ?? '',
-          //lotscount:
-          //doc.data().toString().contains('Malls') ? doc.get('lots') : '');
-          lots: doc.get('lots') ?? 0);
+          name: doc.data().toString().contains('name') ? doc.get('name') : '',
+          //name: doc.get('Bugis +') ?? '',
+          lots: doc.data().toString().contains('lots') ? doc.get('lots') : '');
+      //lots: doc.get('lots') ?? 0);
       //time: doc.get('time') ?? '');
     }).toList();
   }
@@ -41,6 +36,24 @@ class DatabaseService {
     return carparkCollection.snapshots().map(_carparkListFromSnapshot);
   }
 }
+
+// carpark list from snapshot
+//   List<Carparks> _carparkListFromSnapshot(QuerySnapshot snapshot) {
+//     return snapshot.docs.map((doc) {
+//       return Carparks(
+//           name: doc.data().toString().contains('name') ? doc.get('name') : '',
+//           //name: doc.get('Bugis +') ?? '',
+//           lots: doc.data().toString().contains('lots') ? doc.get('lots') : '');
+//       //lots: doc.get('lots') ?? 0);
+//       //time: doc.get('time') ?? '');
+//     }).toList();
+//   }
+
+//   // get carpark stream
+//   Stream<List<Carparks>> get carpark {
+//     return carparkCollection.snapshots().map(_carparkListFromSnapshot);
+//   }
+// }
 
 // class getCarparkList extends StatelessWidget {
 //   final String lotsavail;

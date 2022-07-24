@@ -3,6 +3,7 @@ import "package:httptesting/pages/carpark_list.dart";
 import 'package:httptesting/pages/carparks.dart';
 import 'package:httptesting/services/database.dart';
 import 'package:provider/provider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _HomeState extends State<Home> {
       initialData: null,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Home!"),
+          title: Text("Carpark Availability"),
           centerTitle: true,
         ),
         body: CarparkList(),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CapitaSpring extends StatefulWidget {
-  const CapitaSpring({Key? key}) : super(key: key);
+class LOSM extends StatefulWidget {
+  const LOSM({Key? key}) : super(key: key);
 
   @override
-  State<CapitaSpring> createState() => _CapitaSpringState();
+  State<LOSM> createState() => _LOSMState();
 }
 
-class _CapitaSpringState extends State<CapitaSpring> {
+class _LOSMState extends State<LOSM> {
   Map data = {};
   List<String> days = [
     'Sunday',
@@ -48,7 +48,7 @@ class _CapitaSpringState extends State<CapitaSpring> {
             children: [
               ClipRRect(
                   child: Image.asset(
-                'assets/capital_spring.jpg',
+                'assets/${data['location']}.jpg',
                 height: 360,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
@@ -76,7 +76,7 @@ class _CapitaSpringState extends State<CapitaSpring> {
                   ),
                 ),
                 subtitle: Text(
-                  '88 Market St, Singapore 048948',
+                  '21 Choa Chu Kang Ave 4, Singapore 689812',
                   style: TextStyle(letterSpacing: 1, color: Colors.black),
                 ),
               )
