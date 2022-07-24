@@ -36,35 +36,13 @@ while (True):
         locations.append(name)
         full.append(my_dic)
 
-        #lotscount.append(number)
-    #lots_info = dict(zip(locations, lotscount))
-
-    #print(full)
-
-    #d = {'Malls':[{'name': a, 'lots': t} for a, t in zip(locations, lotscount)]}
-    #print( json.dumps(d, indent=2) )
-
-    # a = json.dumps([{'name': name, 'lots': lots} for name, lots in zip(locations, lotscount) ])
-    # print(a)
-
-
     tz = pytz.timezone('Asia/Singapore')
     timedb = {'Time': datetime.now(tz)}
-
-    # class Malls(object):
-    #     def __init__(self, name, lots=0):
-    #         self.name =name
-    #         self.lots=lots
-
 
     def save(collection_id, time_id, data, snapshot):
         for i in range(len(full)):
             db.collection(collection_id).document(locations[i-1]).set(data[i-1])
             db.collection(time_id).document('Snapshot').set(snapshot)
-
-    # def save(collection_id, data, snapshot):
-    #     db.collection(collection_id).document('Malls').set(data)
-    #     db.collection(collection_id).document('Snapshot').set(snapshot)
 
     save(
         collection_id="Carpark Availability",
