@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "284695665703",
+    "project_id": "orbital2022-a6638",
+    "storage_bucket": "orbital2022-a6638.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284695665703:android:82b264b5a527f1d3fcc202",
+        "android_client_info": {
+          "package_name": "com.Orbital2022.httptesting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284695665703-6iol9nib8jf4a89733aq0aosj9bjsise.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABahUxCCPMz4PkN9mOh7mExevFf-1NVyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284695665703-6iol9nib8jf4a89733aq0aosj9bjsise.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

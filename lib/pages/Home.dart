@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import "package:httptesting/pages/carpark_list.dart";
+import 'package:httptesting/pages/carparks.dart';
+import 'package:httptesting/services/database.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -9,30 +12,31 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Home!"),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Container(
-          child: MaterialButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/carpark_listing');
-            },
-            child: Text(
-              'Click to Enter!',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-              ),
-            ),
-            color: Colors.white,
+    return StreamProvider<List<Carparks>?>.value(
+      value: DatabaseService().carpark,
+      initialData: null,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 65,
+          backgroundColor: Colors.transparent,
+          title: Text("Carpark Availability"),
+          centerTitle: true,
+          elevation: 0,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30)),
+                gradient: LinearGradient(
+                  colors: [Colors.blueAccent, Colors.lightBlue],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                )),
           ),
         ),
+        body: CarparkList(),
       ),
     );
   }

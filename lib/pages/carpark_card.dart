@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:httptesting/main.dart';
 
 class cardTemplate extends StatelessWidget {
-
   final String? location;
   final String? lotscount;
   const cardTemplate({this.location, this.lotscount});
@@ -12,18 +10,18 @@ class cardTemplate extends StatelessWidget {
     return Card(
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '/${location}', arguments: {
-            'lotscount': lotscount,
-            'location': location
-          });
+          Navigator.pushNamed(context, '/${location}',
+              arguments: {'lotscount': lotscount, 'location': location});
         },
         child: Ink(
           height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children:[
+            children: [
               Ink(
-                  child: CircleAvatar(backgroundImage: NetworkImage('https://i.imgur.com/5sjCZvu_d.webp?maxwidth=520&shape=thumb&fidelity=high'))),
+                  child: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://i.imgur.com/5sjCZvu_d.webp?maxwidth=520&shape=thumb&fidelity=high'))),
               Ink(
                 child: Text(
                   location!,
