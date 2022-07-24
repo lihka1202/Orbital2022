@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:httptesting/main.dart';
 
 class cardTemplate extends StatelessWidget {
   final String? location;

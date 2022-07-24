@@ -3,7 +3,6 @@ import "package:httptesting/pages/carpark_list.dart";
 import 'package:httptesting/pages/carparks.dart';
 import 'package:httptesting/services/database.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -42,21 +41,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
-        // body: Center(
-        //   child: Container(
-        //     child: MaterialButton(
-        //       onPressed: () {
-        //         Navigator.pushNamed(context, '/carpark_listing');
-        //       },
-        //       child: Text(
-        //         'Click to Enter!',
-        //         style: TextStyle(
-        //           fontWeight: FontWeight.bold,
-        //           fontSize: 30,
-        //         ),
-        //       ),
-        //       color: Colors.white,
-        //     ),
-        //   ),

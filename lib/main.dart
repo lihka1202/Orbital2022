@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:httptesting/pages/Malls/Bedok%20Mall.dart';
@@ -22,8 +20,6 @@ import 'package:httptesting/pages/Malls/The%20Atrium@Orchard.dart';
 import 'package:httptesting/pages/Malls/Westgate.dart';
 import 'package:httptesting/pages/carpark_list.dart';
 import 'package:httptesting/pages/Home.dart';
-import 'package:httptesting/pages/views/carpark_views.dart';
-import 'package:provider/provider.dart';
 
 /*
 To do list:

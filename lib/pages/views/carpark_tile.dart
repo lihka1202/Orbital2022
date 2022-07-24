@@ -1,5 +1,3 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:httptesting/pages/carparks.dart';
 import 'package:flutter/material.dart';
 
@@ -25,9 +23,8 @@ class CarparkTile extends StatelessWidget {
               leading: CircleAvatar(
                 radius: 22,
                 backgroundImage: AssetImage('assets/${carparks!.name!}.jpg'),
-                //backgroundColor: Colors.blue[400],
               ),
-              title: Text(carparks!.name!, style: TextStyle(fontSize: 15)),
+              title: Text(carparks!.name!, style: TextStyle(fontSize: 18)),
               trailing: Text(
                 carparks!.lots!,
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
