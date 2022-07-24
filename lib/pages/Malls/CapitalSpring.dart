@@ -48,7 +48,7 @@ class _CapitaSpringState extends State<CapitaSpring> {
             children: [
               ClipRRect(
                   child: Image.asset(
-                'assets/capital_spring.jpg',
+                'assets/${data['location']}.jpg',
                 height: 360,
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,

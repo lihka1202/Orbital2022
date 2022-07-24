@@ -21,12 +21,13 @@ class CarparkTile extends StatelessWidget {
               });
             },
             child: ListTile(
+              visualDensity: VisualDensity(vertical: 3),
               leading: CircleAvatar(
                 radius: 22,
-                child: Image.asset('/${carparks!.name!}.png'),
+                backgroundImage: AssetImage('assets/${carparks!.name!}.jpg'),
                 //backgroundColor: Colors.blue[400],
               ),
-              title: Text(carparks!.name!),
+              title: Text(carparks!.name!, style: TextStyle(fontSize: 15)),
               trailing: Text(
                 carparks!.lots!,
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
