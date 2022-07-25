@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "package:httptesting/pages/carpark_list.dart";
 import 'package:httptesting/pages/carparks.dart';
 import 'package:httptesting/services/database.dart';
+import 'package:httptesting/pages/Favourites.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
@@ -37,6 +38,15 @@ class _HomeState extends State<Home> {
           ),
         ),
         body: CarparkList(),
+        floatingActionButton: FloatingActionButton.extended(
+          label: Text('Favourites'),
+          //child: Icon(Icons.favorite),
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
+          onPressed: () {
+            Navigator.pushNamed(context, '/Favourites');
+          },
+        ),
       ),
     );
   }

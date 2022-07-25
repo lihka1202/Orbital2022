@@ -235,7 +235,9 @@ class _CapitaSpringState extends State<CapitaSpring> {
           Container(
             padding: EdgeInsets.all(8),
             child: Text(
-              calculate(value, startTime, endTime),
+              "This is the parking fare:       " +
+                  calculate(value, startTime, endTime) +
+                  ' dollars',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           )

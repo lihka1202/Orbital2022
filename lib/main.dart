@@ -20,6 +20,7 @@ import 'package:httptesting/pages/Malls/The%20Atrium@Orchard.dart';
 import 'package:httptesting/pages/Malls/Westgate.dart';
 import 'package:httptesting/pages/carpark_list.dart';
 import 'package:httptesting/pages/Home.dart';
+import 'package:httptesting/pages/Favourites.dart';
 
 /*
 To do list:
@@ -53,6 +54,7 @@ void main() async {
       '/Six Battery Road': (context) => SixBatteryRoad(),
       '/CapitaSpring': (context) => CapitaSpring(),
       '/IMM Building': (context) => IMMBuilding(),
+      '/Favourites': (context) => Favourites(),
     },
   ));
 }
